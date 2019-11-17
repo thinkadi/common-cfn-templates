@@ -1,0 +1,24 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "IAMGAdministrators": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "Administrators",
+                "ManagedPolicyArns": [
+                    "arn:aws:iam::aws:policy/AdministratorAccess"
+                ]
+            }
+        }
+    },
+    "Outputs": {
+        "AdministratorsGroupArn": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "IAMGAdministrators",
+                    "Arn"
+                ]
+            }
+        }
+    }
+}
